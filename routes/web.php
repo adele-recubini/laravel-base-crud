@@ -14,3 +14,5 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/test', 'BaseController@index');
+
+Route::resource('/beers', 'BeerController');
