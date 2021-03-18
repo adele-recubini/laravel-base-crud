@@ -15,6 +15,7 @@
       <table class="table">
   <thead class="thead-dark">
     <tr>
+
       <th scope="col">#</th>
       <th scope="col">Name</th>
       <th scope="col">Type</th>
@@ -27,10 +28,11 @@
 
 
     <tr>
-       <th scope="row">1</th>
-       <td></td>
-       <td></td>
-       <td></td>
+       <th scope="row">{{$beer->id}}</th>
+       <td>{{$beer->name}}</td>
+       <td{{$beer->tyoe}}></td>
+       <td>{{$beer->price}}</td>
+       <td><img src="{{$beer->image}}" width="100"/></td>
      </tr>
     @endforeach
 
