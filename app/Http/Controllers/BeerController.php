@@ -44,12 +44,17 @@ class BeerController extends Controller
     /**
      * Display the specified resource.
      *
-     * @param  int  $id
+     * @param  int  $book
      * @return \Illuminate\Http\Response
      */
-    public function show($id)
+    public function show(Beer $beer)
     {
-        //
+
+      //praticamente nell altro template gli passo un id che corrisponde ad una singola birra
+      //mettendo il tipo Book andra a prendere un intero che ha una primary key che di fatto è l id e quindi mi mostrerà il singolo libro
+      //$beer = Beer::find($beer);
+
+        return view('beers.show', compact('beer'));
     }
 
     /**
