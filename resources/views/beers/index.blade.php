@@ -28,10 +28,10 @@
   <tbody>
     @foreach ($beers as $beer)
 
-
+{{-- nel link li passo quello che fa la route in show cioe mi restituisce l id del singolo prodotto  --}}
     <tr>
        <th scope="row">{{$beer->id}}</th>
-       <td><a href="{{route('beers.show', ['beer' => $beer->id])}}">{{$beer->name}}</a></td>
+       <td><a href="{{route('beers.show', compact('beer'))}}">{{$beer->name}}</a></td>
        <td{{$beer->type}}></td>
        <td>{{$beer->price}}</td>
        <td><img src="{{$beer->image}}" width="100"></td>
