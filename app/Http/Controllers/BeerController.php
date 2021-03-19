@@ -38,13 +38,23 @@ class BeerController extends Controller
      */
     public function store(Request $request)
     {
-        //
+      $data = $request->all();
+
+      $beer = new Beer();
+      $beer->fill($data);
+      //il fill crea dei parametri e bisogna compilare il model in Beer.php con $fillable
+      $beer->save();
+
+
+      $beerStored = Beer::orderBy('id', 'desc')->first();
+
+      return redirect()->route('beers.show', $beerStored);
     }
 
     /**
      * Display the specified resource.
      *
-     * @param  int  $book
+     * @param  int  $beer
      * @return \Illuminate\Http\Response
      */
     public function show(Beer $beer)
