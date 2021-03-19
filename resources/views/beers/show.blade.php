@@ -4,8 +4,9 @@
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <link rel="stylesheet" href="{{asset('css/app.css') }}" type="text/css">
+        <script src="{{ asset('js/app.js') }}"></script>
 
-        <title>Birre</title>
+        <title>dettaglio birra</title>
 
         <!-- Fonts -->
         <link href="https://fonts.googleapis.com/css?family=Nunito:200,600" rel="stylesheet">
@@ -22,7 +23,7 @@
     <h3 class="card-title">{{$beer->type}}</h3>
     <h2 class="card-title">{{$beer->price}}</h2>
 
-    <a href="/beers" class="btn btn-primary">Go somewhere</a>
+    <a href="/beers" class="btn btn-primary">edit</a>
   </div>
 </div>
 
