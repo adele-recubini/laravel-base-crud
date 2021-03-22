@@ -2,17 +2,45 @@
 @csrf
 @method('POST')
 
-<label for="title">Name</label>
-<input type="text" name="name" placeholder="Nome">
+<div class="form-group">
+  <label for="title">Name</label>
+  <input class="form-control {{$errors->has('name') ? 'is-invalid' : ''}}" type="text" name="name" placeholder="Nome">
+  <div class="invalid-feedback">
 
-<label for="type">Type</label>
-<input type="text" name="type" placeholder="Type">
+    {{$errors->first('name')}}
 
-<label for="price">Price</label>
-<input type="text" name="price" placeholder="price">
+  </div>
+</div>
 
-<label for="image">Image</label>
-<input type="text" name="image" placeholder="image url">
+
+ <div class="form-group">
+  <label for="type">Type</label>
+  <input class="form-control {{$errors->has('type') ? 'is-invalid' : ''}}" type="text" name="type" placeholder="Type">
+ <div class="invalid-feedback">
+  {{$errors->first('type')}}
+  </div>
+ </div>
+
+  <div class="form-group">
+   <label for="type">Price</label>
+   <input class="form-control {{$errors->has('price') ? 'is-invalid' : ''}}" type="text" name="price" placeholder="Price">
+  <div class="invalid-feedback">
+   {{$errors->first('price')}}
+   </div>
+  </div>
+
+  <div class="form-group">
+   <label for="type">Image</label>
+   <input class="form-control {{$errors->has('image') ? 'is-invalid' : ''}}" type="text" name="image" placeholder="Image url">
+  <div class="invalid-feedback">
+   {{$errors->first('image')}}
+   </div>
+  </div>
+
+
+
+
+
 
 <input type="submit" value="Invia">
 </form>
