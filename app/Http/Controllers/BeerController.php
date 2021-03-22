@@ -82,7 +82,7 @@ class BeerController extends Controller
      * @param  int  $book
      * @return \Illuminate\Http\Response
      */
-    public function edit(Beer $book)
+    public function edit(Beer $beer)
     {
         return view('beers.edit', compact('beer'));
     }
