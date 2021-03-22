@@ -46,6 +46,7 @@
          <a href="{{ route('beers.edit', compact('beer'))}}">
          <button type="button" name="button">EDIT</button></a>
 
+
          <a href="{{ route('beers.show', compact('beer'))}}">
          <button type="button" name="button">DELETE</button></a>
 
