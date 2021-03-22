@@ -39,13 +39,7 @@ class BeerController extends Controller
     public function store(Request $request)
     {
       //validazione
-      $request->validate([
-
-        'name' =>'required|max:255',
-        'type' =>'required',
-        'price' => 'required|numeric|between:0,9999.99',
-        'image'=>'required',
-      ]);
+      $this ->validateform($request);
 
       $data = $request->all();
 
@@ -96,10 +90,27 @@ class BeerController extends Controller
      */
     public function update(Request $request, Beer $beer)
     {
+        $this ->validateform($request);
+
         $data = $request->all();
         $beer->update($data);
 
         return redirect()->route('beers.show', compact('beer'));
+    }
+
+    //fuznione custom per la validazione dei campi dello store e dell update
+
+    protected function validateform(Request $request){
+
+
+         $request->validate([
+
+              'name' =>'required|max:255',
+              'type' =>'required',
+              'price' => 'required|numeric|between:0,9999.99',
+              'image'=>'required',
+            ]);
+
     }
 
     /**
