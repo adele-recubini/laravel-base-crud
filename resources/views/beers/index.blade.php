@@ -24,6 +24,7 @@
       <th scope="col">Type</th>
       <th scope="col">Price</th>
       <th scope="col">image</th>
+      <th scope="col">ACTION</th>
     </tr>
   </thead>
   <tbody>
@@ -36,6 +37,9 @@
        <td{{$beer->type}}></td>
        <td>{{$beer->price}}</td>
        <td><img src="{{$beer->image}}" width="100"></td>
+       <td><button type="button" name="button"></button></td>
+
+
      </tr>
     @endforeach
 
