@@ -34,10 +34,25 @@
     <tr>
        <th scope="row">{{$beer->id}}</th>
        <td><a href="{{route('beers.show', compact('beer'))}}">{{$beer->name}}</a></td>
-       <td{{$beer->type}}></td>
+       <td>{{$beer->type}}></td>
        <td>{{$beer->price}}</td>
        <td><img src="{{$beer->image}}" width="100"></td>
-       <td><button type="button" name="button"></button></td>
+
+
+       <td>
+         <a href="{{ route('beers.show', compact('beer'))}}">
+         <button type="button" name="button">SHOW</button></a>
+
+         <a href="{{ route('beers.edit', compact('beer'))}}">
+         <button type="button" name="button">EDIT</button></a>
+
+         <a href="{{ route('beers.show', compact('beer'))}}">
+         <button type="button" name="button">DELETE</button></a>
+
+
+
+
+     </td>
 
 
      </tr>
